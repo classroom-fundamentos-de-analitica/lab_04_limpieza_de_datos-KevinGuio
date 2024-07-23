@@ -98,4 +98,4 @@ def clean_data():
 
     return(df_limpio)
 
-print(clean_data().head(10))
+print(clean_data())
