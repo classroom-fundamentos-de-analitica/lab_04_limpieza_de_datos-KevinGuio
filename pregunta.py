@@ -69,7 +69,11 @@ def limpieza_columna_monto_del_credito(df):
 
 def limpieza_columna_línea_credito(df):
     df = df.copy()
-    df.línea_credito = df.línea_credito.str.lower()
+    df.línea_credito = (df.línea_credito
+                        .str.lower()
+                        .str.replace('_', ' ')
+                        .str.replace('-', ' ')
+                        .str.replace('.', ''))
     return df
 
 
@@ -98,4 +102,4 @@ def clean_data():
 
     return(df_limpio)
 
-print(clean_data())
+#print(clean_data())
